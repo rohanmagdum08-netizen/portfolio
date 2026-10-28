@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#edf0f7">
+  <title>Rohan Magdum | Résumé</title>
+  <style>
+    :root { --ink:#11173a; --muted:#586080; --accent:#3447f5; --line:rgba(17,23,58,.16); --paper:#fff; }
+    * { box-sizing:border-box; }
+    body { margin:0; padding:32px 16px; background:#edf0f7; color:var(--ink); font:16px/1.55 Arial, Helvetica, sans-serif; }
+    .actions { display:flex; justify-content:center; gap:12px; margin:0 auto 20px; }
+    .actions a, .actions button { font:600 14px Arial,sans-serif; border:0; border-radius:999px; padding:12px 18px; cursor:pointer; text-decoration:none; background:var(--ink); color:white; }
+    .actions a.secondary { background:transparent; color:var(--ink); box-shadow:inset 0 0 0 1px var(--line); }
+    main { max-width:850px; margin:0 auto; padding:46px 54px; background:var(--paper); box-shadow:0 14px 48px rgba(17,23,58,.10); }
+    header { border-bottom:3px solid var(--accent); padding-bottom:22px; margin-bottom:26px; }
+    h1 { font-size:36px; line-height:1.1; margin:0 0 8px; letter-spacing:-1px; }
+    .role { font-size:19px; color:var(--accent); font-weight:700; margin-bottom:12px; }
+    .contact { color:var(--muted); font-size:13px; display:flex; flex-wrap:wrap; gap:6px 14px; }
+    a { color:var(--accent); overflow-wrap:anywhere; }
+    section { margin:24px 0; }
+    h2 { font-size:15px; text-transform:uppercase; letter-spacing:1.2px; border-bottom:1px solid var(--line); padding-bottom:7px; margin:0 0 12px; }
+    h3 { font-size:17px; margin:0 0 4px; }
+    p { margin:4px 0 9px; }
+    .muted { color:var(--muted); }
+    .skills { display:flex; flex-wrap:wrap; gap:7px; }
+    .skills span { border:1px solid var(--line); padding:4px 9px; border-radius:999px; font-size:13px; }
+    .project { margin-bottom:16px; }
+    ul { margin:6px 0 0; padding-left:20px; }
+    .note { font-size:12px; color:var(--muted); margin-top:28px; }
+    @media (max-width:600px) { body { padding:14px 8px; } main { padding:28px 22px; } h1 { font-size:30px; } }
+    @page { size:A4; margin:12mm; }
+    @media print {
+      body { padding:0; background:white; font-size:11pt; }
+      .actions { display:none; }
+      main { max-width:none; margin:0; padding:0; box-shadow:none; }
+      a { color:inherit; text-decoration:none; }
+      header { margin-bottom:18px; }
+      section { margin:17px 0; break-inside:avoid; }
+      .note { display:none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="actions">
+    <button type="button" onclick="window.print()">Print / Save as PDF</button>
+    <a class="secondary" href="index.html">Back to portfolio</a>
+  </div>
+  <main>
+    <header>
+      <h1>Rohan Magdum</h1>
+      <div class="role">Full Stack Developer</div>
+      <div class="contact">
+        <span>India</span>
+        <a href="mailto:rohanmagdum08@gmail.com">rohanmagdum08@gmail.com</a>
+        <a href="https://github.com/rohanmagdum08-netizen">GitHub</a>
+        <a href="https://www.linkedin.com/in/rohanmagdum/">LinkedIn</a>
+      </div>
+    </header>
+
+    <section>
+      <h2>Profile</h2>
+      <p>B.Tech CSE student building real-world software. Interested in full-stack development, practical problem solving, and teamwork. Open to internships and placement opportunities.</p>
+    </section>
+
+    <section>
+      <h2>Technical Skills</h2>
+      <div class="skills">
+        <span>Java</span><span>Spring Boot</span><span>HTML</span><span>CSS</span>
+        <span>JavaScript</span><span>SQL</span><span>MySQL</span><span>Git</span>
+        <span>REST APIs</span><span>Python</span><span>Flask</span><span>OpenCV</span><span>YOLO</span>
+      </div>
+    </section>
+
+    <section>
+      <h2>Projects</h2>
+      <div class="project">
+        <h3>VANRAKSHAK 360</h3>
+        <p>AI-based forest protection and wildlife monitoring system.</p>
+        <p><strong>Technologies:</strong> HTML, CSS, JavaScript, Python, Flask, SQL, OpenCV, YOLO</p>
+        <p><a href="https://github.com/rohanmagdum08-netizen/forest-department-">View project on GitHub</a></p>
+      </div>
+      <div class="project">
+        <h3>Smart-Farming-Better-Future</h3>
+        <p><a href="https://github.com/rohanmagdum08-netizen/Smart-Farming-Better-Future">View project on GitHub</a></p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Education</h2>
+      <h3>B.Tech in Computer Science and Engineering (CSE)</h3>
+      <p class="muted">College name, expected graduation year, and academic details not provided.</p>
+    </section>
+
+    <section>
+      <h2>Certifications</h2>
+      <p class="muted">Certifications not provided yet.</p>
+    </section>
+
+    <p class="note">To save a PDF, select “Print / Save as PDF” and choose “Save as PDF” in your browser’s print dialog. Add verified college details and completed certifications before using this résumé for applications.</p>
+  </main>
+</body>
+</html>
