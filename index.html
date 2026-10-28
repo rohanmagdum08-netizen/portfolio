@@ -207,20 +207,29 @@
         padding: calc(var(--nav) + 2rem) 0 2.5rem;
       }
       .name {
-        font-size: clamp(3.4rem, 15vw, 12rem);
-        line-height: 0.9;
+        width: 100%;
+        font-size: clamp(3.4rem, 12vw, 10rem);
+        line-height: 0.92;
         font-weight: 400;
         letter-spacing: -0.04em;
       }
       .line {
         display: block;
+        width: max-content;
+        max-width: 100%;
         white-space: nowrap;
       }
       .mask {
         display: inline-block;
         overflow: hidden;
         vertical-align: top;
+        white-space: nowrap;
         padding: 0.03em 0.01em 0.07em;
+      }
+      @media (max-width: 640px) {
+        .name {
+          font-size: clamp(3rem, 14vw, 6rem);
+        }
       }
       .ch {
         display: inline-block;
