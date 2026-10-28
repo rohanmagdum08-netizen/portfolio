@@ -68,12 +68,18 @@
       }
       body {
         margin: 0;
-        background:
+        background-color: #0b1020;
+        background-image:
           linear-gradient(
-            color-mix(in srgb, var(--bg) 58%, transparent),
-            color-mix(in srgb, var(--bg) 58%, transparent)
+            180deg,
+            rgba(7, 12, 27, 0.72) 0%,
+            rgba(10, 16, 35, 0.78) 48%,
+            rgba(7, 12, 27, 0.86) 100%
           ),
-          url("https://commons.wikimedia.org/wiki/Special:Redirect/file/Br%C3%BCssel,_For%C3%AAt_de_Soignes_02.jpg") center center / cover fixed;
+          url("https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=2400&q=85");
+        background-position: center;
+        background-size: cover;
+        background-attachment: fixed;
         color: var(--ink);
         font:
           400 1.0625rem/1.6 "Instrument Sans",
@@ -452,10 +458,35 @@
       }
       .viz {
         display: flex;
-        align-items: flex-end;
-        gap: 3%;
+        align-items: stretch;
+        justify-content: stretch;
+        min-width: 0;
         height: clamp(160px, 30vw, 340px);
         align-self: end;
+        overflow: hidden;
+        border-radius: 18px;
+        background: rgba(0, 0, 0, 0.12);
+      }
+      .project-image {
+        display: block;
+        width: 100%;
+        height: 100%;
+        min-height: 0;
+        object-fit: cover;
+        border-radius: 18px;
+        box-shadow: 0 18px 44px rgba(0, 0, 0, 0.16);
+        transform: translateZ(0);
+        will-change: transform;
+      }
+      @media (max-width: 799px) {
+        .viz {
+          height: clamp(180px, 48vw, 300px);
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .project-image {
+          will-change: auto;
+        }
       }
       .viz i {
         flex: 1;
@@ -638,8 +669,8 @@
                   </ul>
                   <a class="case" href="https://github.com/rohanmagdum08-netizen/forest-department-" target="_blank" rel="noopener noreferrer">View project on GitHub</a>
                 </div>
-                <div class="viz" aria-hidden="true">
-                  <i style="--h: 40%"></i><i style="--h: 62%"></i><i style="--h: 48%"></i><i style="--h: 78%"></i><i style="--h: 56%"></i><i style="--h: 92%"></i><i style="--h: 70%"></i>
+                <div class="viz">
+                  <img class="project-image" src="https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1200&q=85" alt="Dense green forest representing the VANRAKSHAK 360 wildlife protection project" loading="lazy" decoding="async" />
                 </div>
               </div>
             </article>
@@ -655,8 +686,8 @@
                   </ul>
                   <a class="case" href="https://github.com/rohanmagdum08-netizen/Smart-Farming-Better-Future" target="_blank" rel="noopener noreferrer">View project on GitHub</a>
                 </div>
-                <div class="viz" aria-hidden="true">
-                  <i style="--h: 35%"></i><i style="--h: 52%"></i><i style="--h: 44%"></i><i style="--h: 72%"></i><i style="--h: 60%"></i><i style="--h: 84%"></i><i style="--h: 68%"></i>
+                <div class="viz">
+                  <img class="project-image" src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1200&q=85" alt="Agricultural fields representing the smart farming project" loading="lazy" decoding="async" />
                 </div>
               </div>
             </article>
@@ -667,8 +698,8 @@
                   <p>A menu-driven C/C++ console application for managing book records and member data. Core workflows include adding, searching, issuing, returning, and deleting books, with file handling for record storage.</p>
                   <ul class="tags"><li>C</li><li>C++</li><li>File Handling</li><li>OOP</li></ul>
                 </div>
-                <div class="viz" aria-hidden="true">
-                  <i style="--h: 45%"></i><i style="--h: 76%"></i><i style="--h: 58%"></i><i style="--h: 88%"></i><i style="--h: 64%"></i><i style="--h: 72%"></i>
+                <div class="viz">
+                  <img class="project-image" src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=1200&q=85" alt="Library shelves representing the library management system" loading="lazy" decoding="async" />
                 </div>
               </div>
             </article>
@@ -679,8 +710,8 @@
                   <p>An IoT project concept for remotely controlling household appliances such as lights and fans. The project description includes sensor and microcontroller integration for environment-based actions and a simple control interface with monitoring.</p>
                   <ul class="tags"><li>IoT</li><li>Sensors</li><li>Microcontrollers</li><li>Automation</li></ul>
                 </div>
-                <div class="viz" aria-hidden="true">
-                  <i style="--h: 35%"></i><i style="--h: 55%"></i><i style="--h: 82%"></i><i style="--h: 62%"></i><i style="--h: 91%"></i><i style="--h: 70%"></i>
+                <div class="viz">
+                  <img class="project-image" src="https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=1200&q=85" alt="Modern connected home representing the smart home automation project" loading="lazy" decoding="async" />
                 </div>
               </div>
             </article>
@@ -731,6 +762,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.8.1/dist/vanilla-tilt.min.js"></script>
     <script>
       (() => {
         const html = document.documentElement;
@@ -846,6 +878,7 @@
         document.addEventListener("mouseleave", () =>
           setW.forEach((f) => f(350)),
         );
+        addEventListener("blur", () => setW.forEach((f) => f(350)));
 
         /* Scroll progress and marquee that speeds up with scroll velocity */
         gsap.to(".bar", {
@@ -980,8 +1013,23 @@
             },
           );
 
+        /* Subtle image tilt adds depth without changing the card layout. */
+        if (
+          window.VanillaTilt &&
+          matchMedia("(hover:hover) and (prefers-reduced-motion: no-preference)").matches
+        ) {
+          VanillaTilt.init(document.querySelectorAll(".project-image"), {
+            max: 4,
+            speed: 450,
+            scale: 1.015,
+            glare: true,
+            "max-glare": 0.12,
+            gyroscope: false,
+          });
+        }
+
         /* Magnetic buttons, mouse only */
-        if (matchMedia("(hover:hover)").matches)
+        if (matchMedia("(hover:hover) and (prefers-reduced-motion: no-preference)").matches)
           document.querySelectorAll(".magnet").forEach((el) => {
             const x = gsap.quickTo(el, "x", {
                 duration: 0.7,
