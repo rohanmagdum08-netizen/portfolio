@@ -3,101 +3,166 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#edf0f7">
-  <title>Rohan Magdum | Résumé</title>
+  <meta name="theme-color" content="#11173a">
+  <meta name="description" content="Résumé of Rohan Magdum, B.Tech Computer Science and Engineering student and Full Stack Developer.">
+  <title>Rohan Magdum | Full Stack Developer Résumé</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
-    :root { --ink:#11173a; --muted:#586080; --accent:#3447f5; --line:rgba(17,23,58,.16); --paper:#fff; }
-    * { box-sizing:border-box; }
-    body { margin:0; padding:32px 16px; background:#edf0f7; color:var(--ink); font:16px/1.55 Arial, Helvetica, sans-serif; }
-    .actions { display:flex; justify-content:center; gap:12px; margin:0 auto 20px; }
-    .actions a, .actions button { font:600 14px Arial,sans-serif; border:0; border-radius:999px; padding:12px 18px; cursor:pointer; text-decoration:none; background:var(--ink); color:white; }
-    .actions a.secondary { background:transparent; color:var(--ink); box-shadow:inset 0 0 0 1px var(--line); }
-    main { max-width:850px; margin:0 auto; padding:46px 54px; background:var(--paper); box-shadow:0 14px 48px rgba(17,23,58,.10); }
-    header { border-bottom:3px solid var(--accent); padding-bottom:22px; margin-bottom:26px; }
-    h1 { font-size:36px; line-height:1.1; margin:0 0 8px; letter-spacing:-1px; }
-    .role { font-size:19px; color:var(--accent); font-weight:700; margin-bottom:12px; }
-    .contact { color:var(--muted); font-size:13px; display:flex; flex-wrap:wrap; gap:6px 14px; }
-    a { color:var(--accent); overflow-wrap:anywhere; }
-    section { margin:24px 0; }
-    h2 { font-size:15px; text-transform:uppercase; letter-spacing:1.2px; border-bottom:1px solid var(--line); padding-bottom:7px; margin:0 0 12px; }
-    h3 { font-size:17px; margin:0 0 4px; }
-    p { margin:4px 0 9px; }
-    .muted { color:var(--muted); }
-    .skills { display:flex; flex-wrap:wrap; gap:7px; }
-    .skills span { border:1px solid var(--line); padding:4px 9px; border-radius:999px; font-size:13px; }
-    .project { margin-bottom:16px; }
-    ul { margin:6px 0 0; padding-left:20px; }
-    .note { font-size:12px; color:var(--muted); margin-top:28px; }
-    @media (max-width:600px) { body { padding:14px 8px; } main { padding:28px 22px; } h1 { font-size:30px; } }
-    @page { size:A4; margin:12mm; }
-    @media print {
-      body { padding:0; background:white; font-size:11pt; }
-      .actions { display:none; }
-      main { max-width:none; margin:0; padding:0; box-shadow:none; }
-      a { color:inherit; text-decoration:none; }
-      header { margin-bottom:18px; }
-      section { margin:17px 0; break-inside:avoid; }
-      .note { display:none; }
+    :root{--navy:#11173a;--blue:#3447f5;--muted:#59617e;--line:#dfe3ef;--paper:#fff;--canvas:#edf0f7;--pale:#f4f6ff}
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--canvas);color:var(--navy);font:14px/1.55 "DM Sans",Arial,sans-serif}
+    a{color:inherit;text-decoration:none;overflow-wrap:anywhere}
+    .toolbar{display:flex;justify-content:center;gap:10px;padding:22px 12px}
+    .toolbar a,.toolbar button{border:0;border-radius:999px;padding:11px 17px;font:700 13px "DM Sans",sans-serif;background:var(--navy);color:white;cursor:pointer}
+    .toolbar .ghost{background:transparent;color:var(--navy);box-shadow:inset 0 0 0 1px #c9cfe0}
+    .sheet{max-width:960px;margin:0 auto 36px;background:var(--paper);box-shadow:0 20px 70px #11173a16;overflow:hidden}
+    .hero{background:var(--navy);color:#fff;padding:38px 46px 32px;position:relative}
+    .hero:after{content:"";position:absolute;right:-75px;top:-115px;width:300px;height:300px;border:1px solid #ffffff25;border-radius:50%;box-shadow:0 0 0 34px #ffffff08,0 0 0 70px #ffffff06}
+    .eyebrow{text-transform:uppercase;letter-spacing:2.4px;font-size:10px;font-weight:700;color:#bfc7ff}
+    h1{font:800 clamp(32px,5vw,48px)/1.05 "Manrope",sans-serif;letter-spacing:-1.8px;margin:10px 0 8px;position:relative;z-index:1}
+    .headline{font-size:17px;font-weight:600;color:#cbd1ff;margin-bottom:19px}
+    .contacts{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:12px;color:#f0f2ff;position:relative;z-index:1}
+    .contacts span{white-space:normal}
+    .body{padding:30px 46px 40px;display:grid;grid-template-columns:minmax(0,1.55fr) minmax(210px,.85fr);gap:32px}
+    section{margin:0 0 25px;break-inside:avoid}
+    h2{font:800 13px "Manrope",sans-serif;text-transform:uppercase;letter-spacing:1.4px;margin:0 0 13px;padding-bottom:8px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:9px}
+    h2:before{content:"";width:5px;height:17px;border-radius:4px;background:var(--blue);display:inline-block}
+    p{margin:0 0 8px}
+    .summary{font-size:14px;line-height:1.7;color:#343c5b}
+    .project{padding:0 0 15px;margin-bottom:14px;border-bottom:1px solid #edf0f6}
+    .project:last-child{border-bottom:0;margin-bottom:0;padding-bottom:0}
+    h3{font:700 15px/1.35 "Manrope",sans-serif;margin:0 0 3px}
+    .meta{font-size:11px;color:var(--muted);font-weight:600;margin-bottom:6px}
+    .project p,.edu p{font-size:12px;color:#343c5b;line-height:1.6}
+    .chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+    .chips span{background:var(--pale);color:#2738bb;border:1px solid #e2e6ff;padding:3px 8px;border-radius:5px;font-size:10px;font-weight:600}
+    .side section{background:#fafbff;border:1px solid #edf0f7;border-radius:12px;padding:16px;margin-bottom:15px}
+    .side h2{margin-bottom:12px}
+    .skill-group{margin-bottom:13px}
+    .skill-group:last-child{margin-bottom:0}
+    .skill-group strong{display:block;font-size:11px;margin-bottom:4px}
+    .skill-group p{font-size:12px;color:#434b69;margin:0}
+    .edu{margin-bottom:15px}
+    .edu .meta{margin-bottom:4px}
+    .detail-list{padding-left:16px;margin:6px 0 0;color:#343c5b;font-size:12px}
+    .detail-list li{margin:0 0 4px}
+    .footer{border-top:1px solid var(--line);padding:12px 46px;color:var(--muted);font-size:10px;display:flex;justify-content:space-between;gap:12px}
+    @media(max-width:680px){.sheet{margin:0 8px 20px}.hero{padding:30px 24px}.body{padding:24px;grid-template-columns:1fr;gap:0}.side{display:grid;grid-template-columns:1fr;gap:0}.footer{padding:12px 24px}.contacts{gap:8px 12px}}
+    @page{size:A4;margin:0}
+    @media print{
+      body{background:white;font-size:10.5px;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+      .toolbar{display:none}
+      .sheet{max-width:none;margin:0;box-shadow:none}
+      .hero{padding:25px 34px 21px}
+      h1{font-size:36px}
+      .body{padding:22px 34px 24px;gap:24px;grid-template-columns:minmax(0,1.55fr) minmax(190px,.85fr)}
+      section{margin-bottom:17px}
+      .side section{padding:12px;margin-bottom:10px}
+      .project{padding-bottom:10px;margin-bottom:9px}
+      .footer{padding:9px 34px}
+      a{color:inherit}
     }
   </style>
 </head>
 <body>
-  <div class="actions">
-    <button type="button" onclick="window.print()">Print / Save as PDF</button>
-    <a class="secondary" href="index.html">Back to portfolio</a>
+  <div class="toolbar">
+    <button onclick="window.print()" type="button">Download / Save as PDF</button>
+    <a class="ghost" href="index.html">Back to portfolio</a>
   </div>
-  <main>
-    <header>
+  <main class="sheet">
+    <header class="hero">
+      <div class="eyebrow">Résumé · 2026</div>
       <h1>Rohan Magdum</h1>
-      <div class="role">Full Stack Developer</div>
-      <div class="contact">
-        <span>India</span>
+      <div class="headline">Full Stack Developer · B.Tech Computer Science &amp; Engineering</div>
+      <div class="contacts">
+        <span>Maharashtra, India</span>
+        <span>+91 9673094307</span>
         <a href="mailto:rohanmagdum08@gmail.com">rohanmagdum08@gmail.com</a>
-        <a href="https://github.com/rohanmagdum08-netizen">GitHub</a>
+        <a href="https://github.com/rohanmagdum08-netizen">GitHub Profile</a>
         <a href="https://www.linkedin.com/in/rohanmagdum/">LinkedIn</a>
       </div>
     </header>
-
-    <section>
-      <h2>Profile</h2>
-      <p>B.Tech CSE student building real-world software. Interested in full-stack development, practical problem solving, and teamwork. Open to internships and placement opportunities.</p>
-    </section>
-
-    <section>
-      <h2>Technical Skills</h2>
-      <div class="skills">
-        <span>Java</span><span>Spring Boot</span><span>HTML</span><span>CSS</span>
-        <span>JavaScript</span><span>SQL</span><span>MySQL</span><span>Git</span>
-        <span>REST APIs</span><span>Python</span><span>Flask</span><span>OpenCV</span><span>YOLO</span>
+    <div class="body">
+      <div class="main-column">
+        <section>
+          <h2>Professional Summary</h2>
+          <p class="summary">B.Tech Computer Science and Engineering student focused on full-stack development and building practical, user-focused software. Interested in developing maintainable applications, solving real-world problems, and collaborating effectively. Open to internship and entry-level opportunities.</p>
+        </section>
+        <section>
+          <h2>Selected Projects</h2>
+          <article class="project">
+            <h3>VANRAKSHAK 360</h3>
+            <div class="meta">AI-based forest protection and wildlife monitoring</div>
+            <p>A software project concept for supporting forest protection and wildlife monitoring through a web interface and computer-vision technologies.</p>
+            <div class="chips"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Python</span><span>Flask</span><span>SQL</span><span>OpenCV</span><span>YOLO</span></div>
+            <p style="margin-top:7px"><a href="https://github.com/rohanmagdum08-netizen/forest-department-">View repository ↗</a></p>
+          </article>
+          <article class="project">
+            <h3>Smart-Farming-Better-Future · FasalMitra</h3>
+            <div class="meta">Smart farming and crop advisory portal</div>
+            <p>A farmer-focused portal featuring crop advisory inputs, weather and irrigation guidance, mandi market information, and government scheme discovery. Project documentation describes AI-assisted recommendations using weather and market context and multilingual support.</p>
+            <div class="chips"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Gemini AI</span><span>Weather API</span><span>Market Data API</span></div>
+            <p style="margin-top:7px"><a href="https://github.com/rohanmagdum08-netizen/Smart-Farming-Better-Future">View repository ↗</a></p>
+          </article>
+          <article class="project">
+            <h3>Library Management System</h3>
+            <div class="meta">C / C++ console application</div>
+            <p>Menu-driven system for book and member records, including add, search, issue, return, and delete operations. Uses file handling and modular programming; the project description also references C++ object-oriented concepts.</p>
+            <div class="chips"><span>C</span><span>C++</span><span>File Handling</span><span>OOP</span></div>
+          </article>
+          <article class="project">
+            <h3>Smart Home Automation System</h3>
+            <div class="meta">IoT project</div>
+            <p>Project description includes remote control of appliances such as lights and fans, sensor and microcontroller integration, and a simple interface for monitoring and automation.</p>
+            <div class="chips"><span>IoT</span><span>Sensors</span><span>Microcontrollers</span><span>Automation</span></div>
+          </article>
+        </section>
       </div>
-    </section>
-
-    <section>
-      <h2>Projects</h2>
-      <div class="project">
-        <h3>VANRAKSHAK 360</h3>
-        <p>AI-based forest protection and wildlife monitoring system.</p>
-        <p><strong>Technologies:</strong> HTML, CSS, JavaScript, Python, Flask, SQL, OpenCV, YOLO</p>
-        <p><a href="https://github.com/rohanmagdum08-netizen/forest-department-">View project on GitHub</a></p>
-      </div>
-      <div class="project">
-        <h3>Smart-Farming-Better-Future</h3>
-        <p><a href="https://github.com/rohanmagdum08-netizen/Smart-Farming-Better-Future">View project on GitHub</a></p>
-      </div>
-    </section>
-
-    <section>
-      <h2>Education</h2>
-      <h3>B.Tech in Computer Science and Engineering (CSE)</h3>
-      <p class="muted">College name, expected graduation year, and academic details not provided.</p>
-    </section>
-
-    <section>
-      <h2>Certifications</h2>
-      <p class="muted">Certifications not provided yet.</p>
-    </section>
-
-    <p class="note">To save a PDF, select “Print / Save as PDF” and choose “Save as PDF” in your browser’s print dialog. Add verified college details and completed certifications before using this résumé for applications.</p>
+      <aside class="side">
+        <section>
+          <h2>Technical Skills</h2>
+          <div class="skill-group"><strong>Programming</strong><p>Java, C, C++, JavaScript, Python</p></div>
+          <div class="skill-group"><strong>Frontend</strong><p>HTML5, CSS3, JavaScript</p></div>
+          <div class="skill-group"><strong>Backend &amp; APIs</strong><p>Spring Boot, Node.js, Flask, REST APIs</p></div>
+          <div class="skill-group"><strong>Databases</strong><p>MySQL, MongoDB, SQL</p></div>
+          <div class="skill-group"><strong>AI / Computer Vision</strong><p>OpenCV, YOLO, Gemini AI</p></div>
+          <div class="skill-group"><strong>Tools</strong><p>Visual Studio Code, Git, GitHub</p></div>
+          <div class="skill-group"><strong>Soft Skills</strong><p>Communication, team collaboration, adaptability</p></div>
+        </section>
+        <section>
+          <h2>Education</h2>
+          <div class="edu">
+            <h3>B.E. · Computer Science &amp; Engineering</h3>
+            <div class="meta">Shivaji University · Jayshingpur, Maharashtra</div>
+            <p>Expected May 2027</p>
+            <p>Cumulative GPA: 6.5/10</p>
+            <p>Dean’s List 2022–2027 (as listed in supplied résumé)</p>
+          </div>
+          <div class="edu">
+            <h3>Higher Secondary (12th)</h3>
+            <div class="meta">Ichalkaranji High School Junior College</div>
+            <p>55% · June 2020 – May 2022</p>
+          </div>
+          <div class="edu">
+            <h3>Secondary (10th)</h3>
+            <div class="meta">Manere High School and Junior College</div>
+            <p>80% · Completed March 2020</p>
+          </div>
+          <p style="font-size:11px;color:var(--muted)">Relevant coursework: Software Engineering, Operating Systems, System Design.</p>
+        </section>
+        <section>
+          <h2>Languages</h2>
+          <p>English · Hindi · Marathi</p>
+        </section>
+        <section>
+          <h2>Certifications</h2>
+          <p style="font-size:12px;color:var(--muted)">Add completed certifications here when available. No certification details were included in the supplied résumé.</p>
+        </section>
+      </aside>
+    </div>
+    <div class="footer"><span>Rohan Magdum · Full Stack Developer</span><span>Portfolio: rohanmagdum08-netizen.github.io/portfolio</span></div>
   </main>
 </body>
 </html>
