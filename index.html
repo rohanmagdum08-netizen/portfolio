@@ -68,7 +68,12 @@
       }
       body {
         margin: 0;
-        background: var(--bg);
+        background:
+          linear-gradient(
+            color-mix(in srgb, var(--bg) 58%, transparent),
+            color-mix(in srgb, var(--bg) 58%, transparent)
+          ),
+          url("https://commons.wikimedia.org/wiki/Special:Redirect/file/Br%C3%BCssel,_For%C3%AAt_de_Soignes_02.jpg") center center / cover fixed;
         color: var(--ink);
         font:
           400 1.0625rem/1.6 "Instrument Sans",
