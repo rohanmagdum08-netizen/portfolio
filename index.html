@@ -544,6 +544,106 @@
         color: var(--muted);
         font-size: 0.95rem;
       }
+
+      /* Portfolio refresh: pale blue wave background and image-led project cards */
+      :root,
+      :root:not([data-theme="light"]),
+      :root[data-theme="dark"] {
+        --bg: #f2f7ff;
+        --ink: #081a4b;
+        --muted: #3f527d;
+        --line: rgba(33, 91, 180, 0.18);
+        --accent: #1764ff;
+        --gold: #42c8ff;
+      }
+      body {
+        background:
+          radial-gradient(ellipse at 4% 4%, rgba(27, 113, 255, .24), transparent 24rem),
+          radial-gradient(ellipse at 98% 56%, rgba(68, 172, 255, .24), transparent 28rem),
+          radial-gradient(ellipse at 52% 92%, rgba(80, 168, 255, .16), transparent 30rem),
+          linear-gradient(135deg, #f7faff 0%, #edf5ff 52%, #f8fbff 100%);
+        background-attachment: fixed;
+      }
+      body::after {
+        content: "";
+        position: fixed;
+        inset: 0;
+        z-index: -1;
+        pointer-events: none;
+        opacity: .65;
+        background:
+          radial-gradient(ellipse at -4% 8%, transparent 0 18rem, rgba(41,137,255,.23) 18.1rem, transparent 18.35rem, rgba(41,137,255,.14) 19rem, transparent 19.3rem),
+          radial-gradient(ellipse at 104% 78%, transparent 0 23rem, rgba(32,120,255,.3) 23.1rem, transparent 23.4rem, rgba(32,120,255,.12) 24.2rem, transparent 24.5rem);
+      }
+      header {
+        background: rgba(246, 250, 255, .82);
+        border-bottom: 1px solid rgba(39, 104, 208, .12);
+      }
+      .btn { background: linear-gradient(120deg, #2875ff, #1742d4); color: #fff; box-shadow: 0 8px 22px rgba(31, 91, 226, .15); }
+      .btn:hover { background: linear-gradient(120deg, #1359ec, #092c9c); color: #fff; }
+      .btn.alt { color: var(--ink); background: rgba(255,255,255,.56); box-shadow: inset 0 0 0 1px rgba(29,91,190,.3); }
+      .btn.alt:hover { background: #e3efff; color: var(--ink); }
+      .hero { position: relative; overflow: hidden; }
+      .hero .wrap { position: relative; z-index: 1; }
+      .hero::after {
+        content: "";
+        position: absolute;
+        z-index: 0;
+        right: max(4vw, calc((100vw - 1280px) / 2 + 2rem));
+        top: 23%;
+        width: min(39vw, 470px);
+        height: clamp(190px, 29vw, 330px);
+        background: linear-gradient(180deg, rgba(5,24,62,.02), rgba(5,24,62,.14)), url("https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1100&q=85") center/cover;
+        border: 1px solid rgba(55, 126, 236, .35);
+        border-radius: 24px;
+        box-shadow: 0 28px 60px rgba(20, 76, 172, .22);
+        transform: perspective(900px) rotateY(-7deg) rotateX(2deg);
+      }
+      .name { position: relative; z-index: 2; color: #081a4b; }
+      .name .line:nth-child(2) { color: #1764ff; background: linear-gradient(95deg,#32c8f4,#1764ff 70%,#5948ef); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+      .hero-row { position: relative; z-index: 2; }
+      .lead { max-width: 36ch; }
+      .marquee { border-color: rgba(34, 99, 199, .2); background: rgba(255,255,255,.25); }
+      .track span::after { background: #2d9dff; }
+      .col .rule { background: linear-gradient(90deg,#1c6bff,#69d7ff); }
+      .inner {
+        background: rgba(255,255,255,.82) !important;
+        color: #0b1b4a !important;
+        border: 1px solid rgba(42, 104, 203, .18);
+        box-shadow: 0 14px 35px rgba(28, 77, 150, .08);
+        backdrop-filter: blur(12px);
+        border-radius: 22px;
+      }
+      .stack {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        align-items: stretch;
+        gap: 1.25rem;
+      }
+      .card { position: relative !important; top: auto !important; }
+      .inner { display: flex; flex-direction: column; gap: 1rem; min-height: 100%; padding: 0 0 1.5rem; overflow: hidden; }
+      .inner > div:first-child:not(.project-image) { padding: 0 1.5rem; }
+      .inner h3 { font-size: clamp(1.6rem, 2.5vw, 2.25rem); margin-top: .2rem; }
+      .inner p { max-width: none; }
+      .inner .tags { margin-bottom: 1rem; }
+      .project-image { width: 100%; height: clamp(150px, 21vw, 240px); overflow: hidden; background: #dceaff; }
+      .project-image img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform .65s cubic-bezier(.2,.75,.25,1); }
+      .card:hover .project-image img { transform: scale(1.045); }
+      .viz { display: none; }
+      .case { color: #155be8; }
+      .tl::before { background: rgba(33, 91, 180, .18); }
+      .prog { background: #1764ff; }
+      footer { border-color: rgba(34,99,199,.2); }
+      @media (max-width: 799px) {
+        .hero::after { position: relative; display: block; top: auto; right: auto; width: calc(100% - 2.5rem); height: 220px; margin: 1rem auto 0; transform: none; }
+        .hero { justify-content: center; padding-bottom: 2rem; }
+        .hero .wrap { width: 100%; }
+        .stack { grid-template-columns: 1fr; }
+        .project-image { height: 220px; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .project-image img { transition: none; }
+      }
+
     </style>
   </head>
   <body>
@@ -624,6 +724,7 @@
           <div class="stack">
             <article class="card" style="--i: 0; --bg-c: #3447f5; --fg-c: #fff">
               <div class="inner">
+                <div class="project-image"><img src="https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1200&q=85" alt="Misty forest with trees" loading="lazy" /></div>
                 <div>
                   <h3>VANRAKSHAK 360</h3>
                   <p>AI-based forest protection and wildlife monitoring system.</p>
@@ -640,6 +741,7 @@
             </article>
             <article class="card" style="--i: 1; --bg-c: #ffc83d; --fg-c: #11173a">
               <div class="inner">
+                <div class="project-image"><img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1200&q=85" alt="Green agricultural fields viewed from above" loading="lazy" /></div>
                 <div>
                   <h3>Smart-Farming-Better-Future</h3>
                   <p>A farmer-focused smart farming portal designed to bring crop guidance and useful agricultural information into one place. It includes crop advisory based on crop, soil, and location inputs, weather and irrigation guidance, mandi price information, and support for government scheme discovery.</p>
@@ -657,6 +759,7 @@
             </article>
             <article class="card" style="--i: 2; --bg-c: #d9eee5; --fg-c: #142d25">
               <div class="inner">
+                <div class="project-image"><img src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=1200&q=85" alt="Bookshelves in a library" loading="lazy" /></div>
                 <div>
                   <h3>Library Management System</h3>
                   <p>A menu-driven C/C++ console application for managing book records and member data. Core workflows include adding, searching, issuing, returning, and deleting books, with file handling for record storage.</p>
@@ -669,6 +772,7 @@
             </article>
             <article class="card" style="--i: 3; --bg-c: #f0dfe5; --fg-c: #3a1827">
               <div class="inner">
+                <div class="project-image"><img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=85" alt="Modern living room interior" loading="lazy" /></div>
                 <div>
                   <h3>Smart Home Automation System</h3>
                   <p>An IoT project concept for remotely controlling household appliances such as lights and fans. The project description includes sensor and microcontroller integration for environment-based actions and a simple control interface with monitoring.</p>
